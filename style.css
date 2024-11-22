@@ -1,0 +1,78 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f78ca0, #f9748f);
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* Header */
+.header {
+    padding: 2rem;
+    font-size: 2.5rem;
+}
+
+/* Confetti Animation */
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('assets/images/confetti.gif') center/cover no-repeat;
+    z-index: -1;
+}
+
+/* Photo Gallery */
+.photo-gallery {
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.photo-gallery .carousel img {
+    width: 300px;
+    height: 200px;
+    margin: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.photo-gallery .carousel img:hover {
+    transform: scale(1.1);
+}
+
+/* Video Section */
+.video-section video {
+    width: 80%;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Footer */
+footer {
+    margin: 2rem;
+}
+
+footer button {
+    background: white;
+    color: #f9748f;
+    font-size: 1.5rem;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+footer button:hover {
+    background: #f78ca0;
+}
+
+#birthday-music {
+    display: none;
+}

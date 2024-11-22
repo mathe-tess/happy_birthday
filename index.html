@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Audio Section -->
+    <audio id="birthday-music" autoplay loop controls>
+        <source src="assets/videos/happy.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="container">
+        <!-- Birthday Header -->
+        <header class="header">
+            <h1>🎉 Happy Birthday, RITIKA SHRESTHA! 🎂</h1>
+        </header>
+
+        <!-- Confetti Animation -->
+        <div class="confetti"></div>
+
+        <!-- Photo Gallery -->
+        <section class="photo-gallery">
+            <h2>Pictures 📸</h2>
+            <div class="carousel">
+                <img src="assets/photos/image1.jpg" alt="photo1" style="height: 400px; width: auto;">
+                <img src="assets/photos/image2.jpg" alt="photo2" style="height: 400px; width: auto;">
+                <img src="assets/photos/image3.jpg" alt="photo3" style="height: 400px; width: auto;">
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <h2>Special Birthday Message 🎥</h2>
+            <video controls autoplay loop>
+                <source src="assets/videos/birthday.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- Birthday Wish -->
+        <footer>
+            <h2>Make a Wish! 🕯️</h2>
+            <button id="blowCandles">🎂 Blow the Candles</button>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script>
+        // Make confetti fall when the website opens
+        function throwConfetti() {
+            // Do this for 5 seconds
+            const endTime = Date.now() + 5000;
+
+            function makeItRain() {
+                // Confetti settings
+                confetti({
+                    particleCount: 10, // Small bursts of confetti
+                    startVelocity: 30, // Speed
+                    spread: 360,       // Spread all around
+                    origin: {
+                        x: Math.random(), // Random spots on the screen
+                        y: Math.random() - 0.2
+                    }
+                });
+
+                // Keep making confetti until 5 seconds are up
+                if (Date.now() < endTime) {
+                    requestAnimationFrame(makeItRain);
+                }
+            }
+
+            makeItRain();
+        }
+
+        // Start confetti when the page opens
+        window.onload = throwConfetti;
+    </script>
+
+</body>
+</html>
